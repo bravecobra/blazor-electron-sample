@@ -20,9 +20,7 @@ jobs:
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: 1
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
-      run: |
-        dotnet --version
-        dotnet tool install ElectronNET.CLI
+
 
     # - name: Setup NPM
     #   uses: actions/setup-node@v2-beta
@@ -34,6 +32,8 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: 1
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       run: |
+        dotnet --version
+        dotnet tool install ElectronNET.CLI
         dotnet build ./blazor-electron-sample.sln --configuration Release
 #        npm install
 
