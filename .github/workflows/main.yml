@@ -40,6 +40,8 @@ jobs:
         dotnet build ./blazor-electron-sample.sln --configuration Release
 
     - name: Build Electron artifact
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}}
