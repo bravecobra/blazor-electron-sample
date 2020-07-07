@@ -33,7 +33,7 @@ jobs:
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       run: |
         dotnet --version
-        dotnet tool install ElectronNET.CLI
+        dotnet tool install ElectronNET.CLI -g
         dotnet build ./blazor-electron-sample.sln --configuration Release
 #        npm install
 
