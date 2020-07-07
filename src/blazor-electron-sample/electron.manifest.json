@@ -1,0 +1,33 @@
+{
+  "executable": "blazor-electron-sample",
+  "splashscreen": {
+    "imageFile": ""
+  },
+  "name": "blazor-electron-sample",
+  "author": "",
+  "singleInstance": false,
+  "environment": "Production",
+  "build": {
+    "appId": "com.blazor-electron-sample.app",
+    "productName": "blazor-electron-sample",
+    "copyright": "Copyright © 2020",
+    "buildVersion": "1.0.0",
+    "compression": "maximum",
+    "directories": {
+      "output": "../../../bin/Desktop"
+    },
+    "extraResources": [
+      {
+        "from": "./bin",
+        "to": "bin",
+        "filter": [ "**/*" ]
+      }
+    ],
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "icon": "Assets/electron.ico"
+    }
+  }
+}
