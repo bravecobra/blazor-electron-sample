@@ -22,10 +22,10 @@ jobs:
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
 
 
-    # - name: Setup NPM
-    #   uses: actions/setup-node@v2-beta
-    #   with:
-    #     node-version: '10'
+    - name: Setup NPM
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '10'
 
     - name: Build .NET solution
       env:
@@ -35,6 +35,8 @@ jobs:
         dotnet --version
         dotnet tool install ElectronNET.CLI -g
         dotnet build ./blazor-electron-sample.sln --configuration Release
+        npm install
+        dotnet electronize build /target win
 #        npm install
 
 
