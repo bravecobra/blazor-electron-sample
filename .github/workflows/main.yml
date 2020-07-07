@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: blazor-electron-sample
-        path: bin/Desktop/*
+        path: src/blazor-electron-sample/bin/desktop/blazor-*
 
     # - name: Test .NET solution
     #   env:
