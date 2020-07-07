@@ -45,12 +45,13 @@ jobs:
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}}
+        ls -al src/blazor-electron-sample/bin/desktop/
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
         name: blazor-electron-sample
-        path: src/blazor-electron-sample/bin/desktop/blazor-*
+        path: /**/bin/[Dd]esktop/
 
     # - name: Test .NET solution
     #   env:
