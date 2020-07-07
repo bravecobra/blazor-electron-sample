@@ -9,7 +9,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        name: [ubuntu-latest, windows-latest, macOS-latest]
+        include:
+          - name: ubuntu-latest
+            os: ubuntu-latest
+            target: linux
+          - name: windows-latest
+            os: windows-latest
+            target: win
+          - name: macOS-latest
+            os: macOS-latest
+            target: osx
     steps:
     - uses: actions/checkout@v1
 
@@ -35,8 +45,12 @@ jobs:
         dotnet --version
         dotnet tool install ElectronNET.CLI -g
         dotnet build ./blazor-electron-sample.sln --configuration Release
+
+    - name: Build Electron artifact
+      runs-on: ${{matrix.os}}
+      run: |
         npm install
-        electronize build /target win
+        electronize build /target ${{matrix.target}}
 #        npm install
 
 
