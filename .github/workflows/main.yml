@@ -40,7 +40,6 @@ jobs:
         dotnet build ./blazor-electron-sample.sln --configuration Release
 
     - name: Build Electron artifact
-      runs-on: ${{matrix.cfg.os}}
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}}
