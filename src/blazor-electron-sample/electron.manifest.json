@@ -4,7 +4,14 @@
     "imageFile": ""
   },
   "name": "blazor-electron-sample",
-  "author": "",
+  "author": {
+    "name": "Giovanni Van Geel",
+    "email": "bravecobra@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bravecobra/blazor-electron-sample.git"
+  },
   "singleInstance": false,
   "environment": "Production",
   "build": {
@@ -26,7 +33,16 @@
     "files": [
       "**/*"
     ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": ["AppImage","snap","deb", "rpm"],
+      "vendor": "bravecobra.com"
+    },
     "win": {
+      "target": "nsis",
       "icon": "Assets/electron.ico"
     }
   }
