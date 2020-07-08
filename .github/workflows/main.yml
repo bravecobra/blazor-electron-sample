@@ -52,7 +52,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: blazor-electron-sample-${{matrix.cfg.target}}
-        path: "bin/[Dd]esktop/,!bin/[Dd]esktop/*unpacked/"
+        paths: "bin/[Dd]esktop/\n!bin/[Dd]esktop/*unpacked/"
 
     # - name: Test .NET solution
     #   env:
