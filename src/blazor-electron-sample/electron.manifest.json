@@ -36,9 +36,6 @@
     },
     "win": {
       "target": "nsis",
-      "msi": false,
-      "oneClick": true,
-      "perMachine": false,
       "icon": "Assets/electron.ico"
     }
   }
