@@ -93,7 +93,7 @@ jobs:
     - name: Build Electron artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BUILD_NUMBER : ${{ steps.gitversion.outputs.semVer }}
+        version : ${{ steps.gitversion.outputs.semVer }}
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}}
