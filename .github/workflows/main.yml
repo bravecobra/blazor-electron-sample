@@ -47,7 +47,7 @@ jobs:
         electronize build /target ${{matrix.cfg.target}}
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: blazor-electron-sample
         path: /**/bin/[Dd]esktop/
