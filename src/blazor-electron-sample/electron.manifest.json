@@ -26,7 +26,36 @@
     "files": [
       "**/*"
     ],
+    "mac": {
+      "title": "blazor-electron-sample",
+      "target": ["dmg"],
+      "icon-size": 120,
+      "category": "public.app-category.business",
+      "contents": [
+        {
+          "x": 478,
+          "y": 170,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 170,
+          "type": "file"
+        }
+      ]
+    },
+    "linux": {
+      "target": "deb",
+      "maintainer": "Giovanni Van Geel",
+      "vendor": "bravecobra.com",
+      "compression": "gz"
+    },
     "win": {
+      "target": "nsis",
+      "msi": false,
+      "oneClick": true,
+      "perMachine": false,
       "icon": "Assets/electron.ico"
     }
   }
