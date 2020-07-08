@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: blazor-electron-sample
-        path: /**/bin/[Dd]esktop/
+        path: bin/[Dd]esktop/
 
     # - name: Test .NET solution
     #   env:
