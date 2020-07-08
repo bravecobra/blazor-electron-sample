@@ -28,7 +28,7 @@
     ],
     "mac": {
       "title": "blazor-electron-sample",
-      "target": ["dmg"],
+      "target": "dmg",
       "icon-size": 120,
       "category": "public.app-category.business",
       "contents": [
@@ -47,9 +47,7 @@
     },
     "linux": {
       "target": ["AppImage","snap","deb", "rpm"],
-      "maintainer": "Giovanni Van Geel",
-      "vendor": "bravecobra.com",
-      "compression": "gz"
+      "vendor": "bravecobra.com"
     },
     "win": {
       "target": "nsis",
