@@ -27,6 +27,7 @@ jobs:
       uses: gittools/actions/gitversion/setup@v0.9.2
       with:
           versionSpec: '5.2.x'
+          updateAssemblyInfo: true
 
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
@@ -92,7 +93,7 @@ jobs:
     - name: Build Electron artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CI_PIPELINE_IID: ${{ steps.gitversion.outputs.semVer }}
+        BUILD_NUMBER : ${{ steps.gitversion.outputs.semVer }}
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}}

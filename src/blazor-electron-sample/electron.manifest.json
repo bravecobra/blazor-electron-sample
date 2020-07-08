@@ -18,7 +18,6 @@
     "appId": "com.blazor-electron-sample.app",
     "productName": "blazor-electron-sample",
     "copyright": "Copyright © 2020",
-    "buildVersion": "1.0.0",
     "compression": "maximum",
     "directories": {
       "output": "../../../bin/Desktop"
