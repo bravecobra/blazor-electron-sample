@@ -46,7 +46,7 @@
       ]
     },
     "linux": {
-      "target": "deb",
+      "target": ["AppImage","snap","deb", "rpm"],
       "maintainer": "Giovanni Van Geel",
       "vendor": "bravecobra.com",
       "compression": "gz"
