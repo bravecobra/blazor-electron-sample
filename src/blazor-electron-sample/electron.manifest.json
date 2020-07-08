@@ -27,23 +27,8 @@
       "**/*"
     ],
     "mac": {
-      "title": "blazor-electron-sample",
       "target": "dmg",
-      "icon-size": 120,
-      "category": "public.app-category.business",
-      "contents": [
-        {
-          "x": 478,
-          "y": 170,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 170,
-          "type": "file"
-        }
-      ]
+      "category": "public.app-category.business"
     },
     "linux": {
       "target": ["AppImage","snap","deb", "rpm"],
