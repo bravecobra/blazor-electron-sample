@@ -6,13 +6,13 @@ jobs:
 
   build:
     name: Run Build on ${{ matrix.cfg.os }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.cfg.os }}
     strategy:
       matrix:
         cfg:
           - { target: linux, os: ubuntu-latest   }
           - { target: win   , os: windows-latest }
-          #- { target: osx   , os: macOS-latest }
+          - { target: osx   , os: macOS-latest }
     steps:
 
     - name: Checkout
