@@ -6,11 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": {
-    "name":"Giovanni Van Geel",
-    "email": "bravecobra@gmail.com",
-    "url": "https://github.com/bravecobra/"
-  },
+  "author": "Giovanni Van Geel <bravecobra@gmail.com>",
   "email": "bravecobra@gmail.com",
   "license": "ISC",
   "devDependencies": {

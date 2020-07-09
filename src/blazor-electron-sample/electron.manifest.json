@@ -40,7 +40,9 @@
     },
     "linux": {
       "target": ["AppImage","snap","deb", "rpm"],
-      "vendor": "bravecobra.com"
+      "vendor": "bravecobra.com",
+      "category": "Utility",
+      "maintainer": "bravecobra@gmail.com"
     },
     "win": {
       "target": "nsis",
