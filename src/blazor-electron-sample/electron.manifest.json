@@ -4,7 +4,10 @@
     "imageFile": ""
   },
   "name": "blazor-electron-sample",
-  "author": "Giovanni Van Geel <bravecobra@gmail.com>",
+  "author": {
+    "name":"Giovanni Van Geel <bravecobra@gmail.com>",
+    "email": "bravecobra@gmail.com"
+  },
   "email": "bravecobra@gmail.com",
   "repository": {
     "type": "git",
