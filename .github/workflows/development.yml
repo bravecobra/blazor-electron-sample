@@ -12,7 +12,7 @@ jobs:
         cfg:
           - { target: linux, os: ubuntu-latest   }
           - { target: win   , os: windows-latest }
-          - { target: osx   , os: macOS-latest }
+          #- { target: osx   , os: macOS-latest }
     steps:
 
     - name: Checkout
