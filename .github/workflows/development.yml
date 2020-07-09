@@ -6,7 +6,7 @@ jobs:
 
   build:
     name: Run Build on ${{ matrix.cfg.os }}
-    runs-on: ${{ matrix.cfg.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         cfg:
@@ -99,7 +99,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: blazor-electron-sample-${{matrix.cfg.target}}
+        name: blazor-electron-sample-${{matrix.cfg.target}}-${{steps.gitversion.outputs.semVer}}
         path: "bin/[Dd]esktop/\n!bin/[Dd]esktop/*unpacked/"
 
     # - name: Test .NET solution
