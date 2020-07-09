@@ -5,6 +5,7 @@
   },
   "name": "blazor-electron-sample",
   "author": "Giovanni Van Geel <bravecobra@gmail.com>",
+  "email": "bravecobra@gmail.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/bravecobra/blazor-electron-sample.git"
