@@ -1,6 +1,7 @@
 ﻿@using System.Reflection
+@using System.Diagnostics
 @AssemblyVersionAsString
 
 @code {
-    private string AssemblyVersionAsString => GetType().Assembly.GetName().Version?.ToString();
+    private string AssemblyVersionAsString => FileVersionInfo.GetVersionInfo(GetType().Assembly.Location).ProductVersion;
 }

@@ -84,7 +84,7 @@ jobs:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-        Semver: ${{ steps.gitversion.outputs.semVer }}
+        SemVer: ${{ steps.gitversion.outputs.semVer }}
       run: |
         dotnet --version
         dotnet tool install ElectronNET.CLI -g
@@ -93,7 +93,7 @@ jobs:
     - name: Build Electron artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        Semver: ${{ steps.gitversion.outputs.semVer }}
+        SemVer: ${{ steps.gitversion.outputs.semVer }}
       run: |
         npm install
         electronize build /target ${{matrix.cfg.target}} /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
