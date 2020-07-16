@@ -1,0 +1,13 @@
+﻿@inject NavigationManager NavigationManager
+
+<MatNavMenu Multi="true" Class="app-sidebar">
+    <MatNavItem Href="@NavigationManager.ToAbsoluteUri(" ").AbsoluteUri" NavLinkMatch="NavLinkMatch.All">
+        <MatIcon>home</MatIcon> Home page
+    </MatNavItem>
+    <MatNavItem Href="@NavigationManager.ToAbsoluteUri("counter").AbsoluteUri">
+        <MatIcon>list_alt</MatIcon>Counter
+    </MatNavItem>
+    <MatNavItem Href="@NavigationManager.ToAbsoluteUri("fetchdata").AbsoluteUri">
+        <MatIcon>list_alt</MatIcon>Fetch Data
+    </MatNavItem>
+</MatNavMenu>

@@ -1,17 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net.Http;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using blazor_electron_sample.Data;
+using blazor_electron_sample.Middleware;
 using ElectronNET.API;
 using ElectronNET.API.Entities;
+using Fluxor;
+using MatBlazor;
 
 namespace blazor_electron_sample
 {
@@ -28,9 +26,26 @@ namespace blazor_electron_sample
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<HttpClient>();
             services.AddRazorPages();
-            services.AddServerSideBlazor();
+            services.AddServerSideBlazor(options =>
+            {
+                options.DetailedErrors = true;
+            });
             services.AddSingleton<WeatherForecastService>();
+            services.AddMatToaster(config =>
+            {
+                //example MatToaster customizations
+                config.PreventDuplicates = false;
+                config.NewestOnTop = true;
+                config.ShowCloseButton = true;
+            });
+            services.AddFluxor(o => o
+                .ScanAssemblies(typeof(Startup).Assembly)
+                .UseRouting()
+                .UseReduxDevTools()
+                .AddMiddleware<LoggingMiddleware>()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,7 +78,7 @@ namespace blazor_electron_sample
             }
         }
 
-        public async void ElectronBootstrap()
+        private async void ElectronBootstrap()
         {
             var browserWindow = await Electron.WindowManager.CreateWindowAsync(new BrowserWindowOptions
             {
@@ -75,7 +90,7 @@ namespace blazor_electron_sample
             await browserWindow.WebContents.Session.ClearCacheAsync();
             browserWindow.Maximize();
             browserWindow.OnReadyToShow += () => browserWindow.Show();
-            browserWindow.SetTitle("Electron.NET API Demos");
+            browserWindow.SetTitle("Blazor Electron Sample");
         }
     }
 }
