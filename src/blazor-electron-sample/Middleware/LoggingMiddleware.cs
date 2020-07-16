@@ -16,7 +16,6 @@ namespace blazor_electron_sample.Middleware
 
         public override Task InitializeAsync(IStore store)
         {
-            Store = store;
             _logger.LogInformation(nameof(InitializeAsync));
             return Task.CompletedTask;
         }
