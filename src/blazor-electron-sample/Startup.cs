@@ -1,11 +1,11 @@
 using System.Net.Http;
+using blazor_eelectron_sample.Application;
+using blazor_electron_sample.CommonUI.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using blazor_electron_sample.Data;
-using blazor_electron_sample.Middleware;
 using ElectronNET.API;
 using ElectronNET.API.Entities;
 using Fluxor;

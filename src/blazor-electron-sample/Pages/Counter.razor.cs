@@ -1,4 +1,4 @@
-﻿using blazor_electron_sample.Store.CounterUseCase;
+﻿using blazor_electron_sample.CommonUI.Store.CounterUseCase;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
 

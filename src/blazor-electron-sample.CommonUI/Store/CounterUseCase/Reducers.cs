@@ -1,8 +1,9 @@
 ﻿using System;
 using Fluxor;
+
 // ReSharper disable UnusedMember.Global
 
-namespace blazor_electron_sample.Store.CounterUseCase
+namespace blazor_electron_sample.CommonUI.Store.CounterUseCase
 {
     public static class Reducers
     {

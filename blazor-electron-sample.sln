@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30218.91
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor-electron-sample", "src\blazor-electron-sample\blazor-electron-sample.csproj", "{0C84D31B-D431-42EA-BD30-040015FDEB75}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor-electron-sample.Application", "src\blazor-electron-sample.Application\blazor-electron-sample.Application.csproj", "{4C8CE6E5-F8AD-48E2-B429-9B50767C1CE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor-electron-sample.Domain", "src\blazor-electron-sample.Domain\blazor-electron-sample.Domain.csproj", "{E6AA698F-C0D4-4214-B7B1-1B8F4951C52E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor-electron-sample.CommonUI", "src\blazor-electron-sample.CommonUI\blazor-electron-sample.CommonUI.csproj", "{29BD69F6-3BED-4BC0-BC04-CC040D0EEA75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{0C84D31B-D431-42EA-BD30-040015FDEB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C84D31B-D431-42EA-BD30-040015FDEB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C84D31B-D431-42EA-BD30-040015FDEB75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C8CE6E5-F8AD-48E2-B429-9B50767C1CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8CE6E5-F8AD-48E2-B429-9B50767C1CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8CE6E5-F8AD-48E2-B429-9B50767C1CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8CE6E5-F8AD-48E2-B429-9B50767C1CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AA698F-C0D4-4214-B7B1-1B8F4951C52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AA698F-C0D4-4214-B7B1-1B8F4951C52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AA698F-C0D4-4214-B7B1-1B8F4951C52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AA698F-C0D4-4214-B7B1-1B8F4951C52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BD69F6-3BED-4BC0-BC04-CC040D0EEA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BD69F6-3BED-4BC0-BC04-CC040D0EEA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BD69F6-3BED-4BC0-BC04-CC040D0EEA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BD69F6-3BED-4BC0-BC04-CC040D0EEA75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

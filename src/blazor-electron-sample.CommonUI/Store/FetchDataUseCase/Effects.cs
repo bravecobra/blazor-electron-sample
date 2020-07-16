@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using blazor_electron_sample.Data;
-using System.Net.Http.Json;
+using blazor_eelectron_sample.Application;
 using Fluxor;
+
 // ReSharper disable UnusedMember.Global
 
-namespace blazor_electron_sample.Store.FetchDataUseCase
+namespace blazor_electron_sample.CommonUI.Store.FetchDataUseCase
 {
     public class Effects
     {

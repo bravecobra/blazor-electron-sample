@@ -1,8 +1,9 @@
 ﻿using System;
 using Fluxor;
+
 // ReSharper disable UnusedMember.Global
 
-namespace blazor_electron_sample.Store.FetchDataUseCase
+namespace blazor_electron_sample.CommonUI.Store.FetchDataUseCase
 {
     public class Reducers
     {

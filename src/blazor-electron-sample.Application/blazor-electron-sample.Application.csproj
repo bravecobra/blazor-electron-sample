@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>blazor_eelectron_sample.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\blazor-electron-sample.Domain\blazor-electron-sample.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

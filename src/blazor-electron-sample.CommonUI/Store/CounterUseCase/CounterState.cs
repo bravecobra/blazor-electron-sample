@@ -1,4 +1,4 @@
-﻿namespace blazor_electron_sample.Store.CounterUseCase
+﻿namespace blazor_electron_sample.CommonUI.Store.CounterUseCase
 {
     public class CounterState
     {

@@ -1,10 +1,11 @@
-﻿using blazor_electron_sample.Store.FetchDataUseCase;
+﻿using blazor_electron_sample.CommonUI.Store.FetchDataUseCase;
 using Fluxor;
+using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 
 namespace blazor_electron_sample.Pages
 {
-    public partial class FetchData
+    public partial class FetchData: FluxorComponent
     {
 
         [Inject]

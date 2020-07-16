@@ -3,7 +3,7 @@ using Fluxor;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace blazor_electron_sample.Middleware
+namespace blazor_electron_sample.CommonUI.Middleware
 {
     public class LoggingMiddleware : Fluxor.Middleware
     {

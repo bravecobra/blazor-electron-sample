@@ -1,6 +1,6 @@
 ﻿using Fluxor;
 
-namespace blazor_electron_sample.Store.Layout
+namespace blazor_electron_sample.CommonUI.Store.Layout
 {
     public class Feature : Feature<LayoutState>
     {

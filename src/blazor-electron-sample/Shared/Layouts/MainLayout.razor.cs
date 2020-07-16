@@ -1,10 +1,11 @@
-﻿using blazor_electron_sample.Store.Layout;
+﻿using blazor_electron_sample.CommonUI.Store.Layout;
 using Fluxor;
+using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 
 namespace blazor_electron_sample.Shared.Layouts
 {
-    public partial class MainLayout
+    public partial class MainLayout: FluxorLayout
     {
         [Inject]
         private IState<LayoutState> LayoutState { get; set; }
