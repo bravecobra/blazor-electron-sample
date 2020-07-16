@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Fluxor;
+﻿using Fluxor;
 
 namespace blazor_electron_sample.Store.FetchDataUseCase
 {

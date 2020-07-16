@@ -1,5 +1,4 @@
-﻿using blazor_electron_sample.Store.CounterUseCase;
-using Fluxor;
+﻿using Fluxor;
 
 namespace blazor_electron_sample.Store.Layout
 {

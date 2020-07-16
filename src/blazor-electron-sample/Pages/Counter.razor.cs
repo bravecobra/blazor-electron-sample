@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using blazor_electron_sample.Store.CounterUseCase;
+﻿using blazor_electron_sample.Store.CounterUseCase;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
 

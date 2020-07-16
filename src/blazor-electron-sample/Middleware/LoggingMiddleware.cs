@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Fluxor;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -12,7 +8,6 @@ namespace blazor_electron_sample.Middleware
     public class LoggingMiddleware : Fluxor.Middleware
     {
         private readonly ILogger<LoggingMiddleware> _logger;
-        private IStore Store;
 
         public LoggingMiddleware(ILogger<LoggingMiddleware> logger)
         {
