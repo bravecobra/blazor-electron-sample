@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using blazor_electron_sample.Domain;
 
-namespace blazor_eelectron_sample.Application
+namespace blazor_electron_sample.Application
 {
     public class WeatherForecastService
     {

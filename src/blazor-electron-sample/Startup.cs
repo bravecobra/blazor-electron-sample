@@ -1,5 +1,5 @@
 using System.Net.Http;
-using blazor_eelectron_sample.Application;
+using blazor_electron_sample.Application;
 using blazor_electron_sample.CommonUI.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using blazor_eelectron_sample.Application;
+using blazor_electron_sample.Application;
 using Fluxor;
 
 // ReSharper disable UnusedMember.Global
