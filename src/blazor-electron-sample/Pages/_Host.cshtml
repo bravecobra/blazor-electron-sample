@@ -1,5 +1,4 @@
 ﻿@page "/"
-@namespace blazor_electron_sample.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
@@ -19,7 +18,7 @@
 </head>
 <body class="mat">
     <app style="display: flex;">
-        <component type="typeof(App)" render-mode="ServerPrerendered" />
+        <component type="typeof(blazor_electron_sample.CommonUI.App)" render-mode="ServerPrerendered" />
     </app>
 
     @* ReSharper disable Html.PathError *@

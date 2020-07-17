@@ -4,9 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>blazor_electron_sample</RootNamespace>
     <DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
+    <BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DeepCloner" Version="0.10.2" />
     <PackageReference Include="ElectronNET.API" Version="9.31.2" />
     <PackageReference Include="Fluxor" Version="3.1.1" />
     <PackageReference Include="Fluxor.Blazor.Web" Version="3.1.1" />
@@ -24,7 +24,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\blazor-electron-sample.Application\blazor-electron-sample.Application.csproj" />
     <ProjectReference Include="..\blazor-electron-sample.CommonUI\blazor-electron-sample.CommonUI.csproj" />
   </ItemGroup>
 </Project>

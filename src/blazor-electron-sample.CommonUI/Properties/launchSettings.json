@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "blazor-electron-sample.CommonUI": {
+      "commandName": "Project"
+    }
+  }
+}

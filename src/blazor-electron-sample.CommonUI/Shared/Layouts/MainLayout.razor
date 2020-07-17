@@ -1,11 +1,9 @@
-﻿@inject NavigationManager NavigationManager
-@inherits Fluxor.Blazor.Web.Components.FluxorLayout
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorLayout
 
-
-<MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="@BbDrawerClass">
+<MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="@_bbDrawerClass">
     <MatHidden Breakpoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
         <ChildContent>
-            <MatDrawer @bind-Opened="@NavMenuOpened" Mode="@MatDrawerMode.Modal"  >
+            <MatDrawer @bind-Opened="@NavMenuOpened" Mode="@MatDrawerMode.Modal">
                 <NavMenu></NavMenu>
             </MatDrawer>
         </ChildContent>

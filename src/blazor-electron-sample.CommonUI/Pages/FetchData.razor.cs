@@ -1,13 +1,11 @@
 ﻿using blazor_electron_sample.CommonUI.Store.FetchDataUseCase;
 using Fluxor;
-using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 
-namespace blazor_electron_sample.Pages
+namespace blazor_electron_sample.CommonUI.Pages
 {
-    public partial class FetchData: FluxorComponent
+    partial class FetchData
     {
-
         [Inject]
         private IState<WeatherState> WeatherState { get; set; }
 

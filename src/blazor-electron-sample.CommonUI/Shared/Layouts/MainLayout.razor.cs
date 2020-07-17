@@ -1,20 +1,20 @@
 ﻿using blazor_electron_sample.CommonUI.Store.Layout;
 using Fluxor;
-using Fluxor.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
 
-namespace blazor_electron_sample.Shared.Layouts
+namespace blazor_electron_sample.CommonUI.Shared.Layouts
 {
-    public partial class MainLayout: FluxorLayout
+    partial class MainLayout
     {
-        [Inject]
-        private IState<LayoutState> LayoutState { get; set; }
+        [Inject] private IState<LayoutState> LayoutState { get; set; }
 
-        [Inject]
-        public IDispatcher Dispatcher { get; set; }
+        [Inject] private IDispatcher Dispatcher { get; set; }
+
+        [Inject] private NavigationManager NavigationManager { get; set; }
 
         private bool _navMenuOpened;
-        public bool NavMenuOpened
+
+        private bool NavMenuOpened
         {
             get => _navMenuOpened;
             set
@@ -24,14 +24,14 @@ namespace blazor_electron_sample.Shared.Layouts
             }
         }
 
-        public string BbDrawerClass = "";
+        private string _bbDrawerClass = "";
 
         protected override void OnInitialized()
         {
             base.OnInitialized();
             LayoutState.StateChanged += (sender, state) =>
             {
-                BbDrawerClass = state.ShowSideNav ? "full" : "closed";
+                _bbDrawerClass = state.ShowSideNav ? "full" : "closed";
                 NavMenuOpened = state.ShowSideNav;
                 this.StateHasChanged();
             };
