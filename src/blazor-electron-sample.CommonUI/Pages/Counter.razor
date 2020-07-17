@@ -1,0 +1,10 @@
+﻿@page "/counter"
+@using Fluxor
+@using blazor_electron_sample.CommonUI.Store.CounterUseCase
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<MatHeadline3>Counter</MatHeadline3>
+
+<p>Current count: @CounterState.Value.ClickCount</p>
+
+<MatButton Raised="true" OnClick="IncrementCount">Click me</MatButton>

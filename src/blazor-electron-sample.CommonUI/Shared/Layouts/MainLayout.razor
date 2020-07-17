@@ -1,0 +1,35 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorLayout
+
+<MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="@_bbDrawerClass">
+    <MatHidden Breakpoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
+        <ChildContent>
+            <MatDrawer @bind-Opened="@NavMenuOpened" Mode="@MatDrawerMode.Modal">
+                <NavMenu></NavMenu>
+            </MatDrawer>
+        </ChildContent>
+        <ElseContent>
+            <MatDrawer @bind-Opened="@NavMenuOpened" Mode="@MatDrawerMode.Dismissible">
+                <NavMenu></NavMenu>
+            </MatDrawer>
+        </ElseContent>
+    </MatHidden>
+    <MatDrawerContent>
+        <MatAppBarContainer>
+            <MatAppBar Fixed="true">
+                <MatAppBarRow>
+                    <MatAppBarSection>
+                        <MatIconButton Icon="menu" OnClick="args => NavToggle()"></MatIconButton>
+                        <MatAppBarTitle>Blazor Electron Sample</MatAppBarTitle>
+                    </MatAppBarSection>
+                    <MatAppBarSection Align="MatAppBarSectionAlign.End">
+                        <MatIconButton Link="https://paypal.me/giovannivangeel" target="_blank" skip-router="true"><i class="fa fa-cc-paypal"></i></MatIconButton>
+                        <MatIconButton Link="https://github.com/bravecobra/blazor-electron-sample" target="_blank" skip-router="true"><i class="fa fa-github" aria-hidden="true"></i></MatIconButton>
+                    </MatAppBarSection>
+                </MatAppBarRow>
+            </MatAppBar>
+            <MatAppBarContent>
+                @Body
+            </MatAppBarContent>
+        </MatAppBarContainer>
+    </MatDrawerContent>
+</MatDrawerContainer>

@@ -8,8 +8,5 @@
   },
   "author": "Giovanni Van Geel <bravecobra@gmail.com>",
   "email": "bravecobra@gmail.com",
-  "license": "ISC",
-  "devDependencies": {
-    "electron-builder": "^22.7.0"
-  }
+  "license": "ISC"
 }

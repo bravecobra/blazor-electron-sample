@@ -1,6 +1,6 @@
 using System;
 
-namespace blazor_electron_sample.Data
+namespace blazor_electron_sample.Domain
 {
     public class WeatherForecast
     {
