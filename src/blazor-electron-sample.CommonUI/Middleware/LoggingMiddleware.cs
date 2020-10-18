@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 namespace blazor_electron_sample.CommonUI.Middleware
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class LoggingMiddleware : Fluxor.Middleware
     {
         private readonly ILogger<LoggingMiddleware> _logger;
