@@ -5,14 +5,18 @@ on: [push]
 jobs:
 
   build:
-    name: Run Build on ${{ matrix.cfg.os }}
-    runs-on: ${{ matrix.cfg.os }}
+    name: Run Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        cfg:
-          - { target: linux, os: ubuntu-latest   }
-          - { target: win   , os: windows-latest }
-          #- { target: osx   , os: macOS-latest }
+        os: [ubuntu-latest, windows-latest] # macos-latest
+        include:
+          - os: ubuntu-latest
+            target: linux
+          - os: windows-latest
+            target: win
+          # - os: macos-latest
+          #   target: osx
     steps:
 
     - name: Checkout
@@ -96,12 +100,12 @@ jobs:
         SemVer: ${{ steps.gitversion.outputs.semVer }} #let dotnet publish pick this up as a build parameter
       run: |
         npm install
-        electronize build /target ${{matrix.cfg.target}} /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
+        electronize build /target ${{matrix.target}} /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: blazor-electron-sample-${{matrix.cfg.target}}-${{steps.gitversion.outputs.semVer}}
+        name: blazor-electron-sample-${{matrix.target}}-${{steps.gitversion.outputs.semVer}}
         path: "bin/[Dd]esktop/\n!bin/[Dd]esktop/*unpacked/"
 
     # - name: Test .NET solution
