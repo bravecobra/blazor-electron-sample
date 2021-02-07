@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "electronnet.cli": {
+      "version": "11.5.1",
+      "commands": [
+        "electronize"
+      ]
+    },
+    "gitversion.tool": {
+      "version": "5.6.4",
+      "commands": [
+        "dotnet-gitversion"
+      ]
+    },
+    "cake.tool": {
+      "version": "0.38.5",
+      "commands": [
+        "dotnet-cake"
+      ]
+    }
+  }
+}

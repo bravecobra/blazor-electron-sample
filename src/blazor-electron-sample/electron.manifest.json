@@ -39,7 +39,7 @@
       "category": "public.app-category.business"
     },
     "linux": {
-      "target": ["AppImage","snap","deb", "rpm"],
+      "target": ["deb"],
       "vendor": "bravecobra.com",
       "category": "Utility",
       "maintainer": "bravecobra@gmail.com"
