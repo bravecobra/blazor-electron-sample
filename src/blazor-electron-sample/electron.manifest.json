@@ -42,7 +42,8 @@
       "target": ["deb"],
       "vendor": "bravecobra.com",
       "category": "Utility",
-      "maintainer": "bravecobra@gmail.com"
+      "maintainer": "bravecobra@gmail.com",
+      "artifactName": "${productName}-${version}.${ext}"
     },
     "win": {
       "target": "nsis",
