@@ -103,6 +103,7 @@ jobs:
         electronize build /target ${{matrix.target}} /PublishSingleFile false /PublishReadyToRun false /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
 
     - name: Upload Artifact
+      if: startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v2
       with:
         name: blazor-electron-sample-${{matrix.target}}-${{steps.gitversion.outputs.semVer}}
@@ -115,3 +116,63 @@ jobs:
     #   run: |
     #     dotnet --version
     #     dotnet test ./blazor-electron-sample.sln --configuration Release
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use GitVersion
+        id: gitversion # step id used as reference for output values
+        uses: gittools/actions/gitversion/execute@v0.9.7
+
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@main
+        with:
+          configuration: ".github/workflows/CHANGELOG_TEMPLATE.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: |
+            ${{steps.github_release.outputs.changelog}}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: blazor-electron-sample-linux-${{steps.gitversion.outputs.semVer}}
+          path: artifacts
+
+      - name: Upload Release Asset Linux
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./artifacts/blazor-electron-sample-linux-${{steps.gitversion.outputs.semVer}}.zip
+          asset_name: blazor-electron-sample-linux-${{steps.gitversion.outputs.semVer}}.zip
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset Windows
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./artifacts/blazor-electron-sample-win-${{steps.gitversion.outputs.semVer}}.zip
+          asset_name: blazor-electron-sample-win-${{steps.gitversion.outputs.semVer}}.zip
+          asset_content_type: application/zip
