@@ -7,6 +7,18 @@
       "commands": [
         "electronize"
       ]
+    },
+    "gitversion.tool": {
+      "version": "5.6.4",
+      "commands": [
+        "dotnet-gitversion"
+      ]
+    },
+    "cake.tool": {
+      "version": "0.38.5",
+      "commands": [
+        "dotnet-cake"
+      ]
     }
   }
 }
