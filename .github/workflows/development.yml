@@ -71,7 +71,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: 5.0.x
       env:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -100,7 +100,7 @@ jobs:
         SemVer: ${{ steps.gitversion.outputs.semVer }} #let dotnet publish pick this up as a build parameter
       run: |
         npm install
-        electronize build /target ${{matrix.target}} /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
+        electronize build /target ${{matrix.target}} /PublishSingleFile false /PublishReadyToRun false /electron-params "-c.extraMetadata.version=${{ steps.gitversion.outputs.semVer }} -c.extraMetadata.buildVersion=${{ steps.gitversion.outputs.assemblySemFileVer }}"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
