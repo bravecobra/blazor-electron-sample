@@ -6,6 +6,7 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
     <DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
+	<OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
