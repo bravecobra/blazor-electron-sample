@@ -45,6 +45,7 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
         DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: true
+        DOTNET_ROLL_FORWARD: Major
 
     - name: Use GitVersion
       id: gitversion
@@ -53,6 +54,7 @@ jobs:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+        DOTNET_ROLL_FORWARD: Major
 
     - name: Setup NPM
       uses: actions/setup-node@v2-beta
