@@ -75,6 +75,7 @@ jobs:
     - name: Build Electron artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DOTNET_ROLL_FORWARD: Major
         SemVer: ${{ steps.gitversion.outputs.semVer }} #let dotnet publish pick this up as a build parameter
       run: |
         npm install
