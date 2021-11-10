@@ -30,7 +30,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
       env:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -45,6 +45,7 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
         DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: true
+        DOTNET_ROLL_FORWARD: Major
 
     - name: Use GitVersion
       id: gitversion
@@ -53,6 +54,7 @@ jobs:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+        DOTNET_ROLL_FORWARD: Major
 
     - name: Setup NPM
       uses: actions/setup-node@v2-beta
@@ -73,6 +75,7 @@ jobs:
     - name: Build Electron artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DOTNET_ROLL_FORWARD: Major
         SemVer: ${{ steps.gitversion.outputs.semVer }} #let dotnet publish pick this up as a build parameter
       run: |
         npm install
