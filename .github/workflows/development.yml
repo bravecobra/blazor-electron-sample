@@ -59,7 +59,7 @@ jobs:
     - name: Setup NPM
       uses: actions/setup-node@v2-beta
       with:
-        node-version: '10'
+        node-version: '16'
 
     - name: Build .NET solution
       env:
