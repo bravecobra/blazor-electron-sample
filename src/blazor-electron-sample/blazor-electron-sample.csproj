@@ -9,9 +9,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ElectronNET.API" Version="13.5.1" />
-    <PackageReference Include="Fluxor" Version="4.2.0" />
-    <PackageReference Include="Fluxor.Blazor.Web" Version="4.2.0" />
-    <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="4.2.0" />
+    <PackageReference Include="Fluxor" Version="4.2.1" />
+    <PackageReference Include="Fluxor.Blazor.Web" Version="4.2.1" />
+    <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="4.2.1" />
     <PackageReference Include="MatBlazor" Version="2.8.0" />
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
