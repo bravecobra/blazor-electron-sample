@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59748FDF-F9B8-49A7-8D42-FEA1EC1E1165}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\development.yml = .github\workflows\development.yml
+		build.cake = build.cake
+		package.json = package.json
+		package-lock.json = package-lock.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
