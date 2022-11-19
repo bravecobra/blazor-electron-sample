@@ -9,9 +9,9 @@ namespace blazor_electron_sample.CommonUI.Pages
 {
     partial class Counter
     {
-        [Inject] private IState<CounterState> CounterState { get; set; }
+        [Inject] private IState<CounterState> CounterState { get; set; } = null!;
 
-        [Inject] private IDispatcher Dispatcher { get; set; }
+        [Inject] private IDispatcher Dispatcher { get; set; } = null!;
 
         private void IncrementCount()
         {

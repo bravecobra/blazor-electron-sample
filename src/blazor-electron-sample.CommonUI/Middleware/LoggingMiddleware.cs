@@ -15,7 +15,7 @@ namespace blazor_electron_sample.CommonUI.Middleware
             _logger = logger;
         }
 
-        public override Task InitializeAsync(IStore store)
+        public override Task InitializeAsync(IDispatcher dispatcher, IStore store)
         {
             _logger.LogInformation(nameof(InitializeAsync));
             return Task.CompletedTask;
