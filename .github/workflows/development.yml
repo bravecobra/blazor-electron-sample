@@ -71,7 +71,7 @@ jobs:
 
     - name: Upload Artifact
       if: startsWith(github.ref, 'refs/tags/')
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: blazor-electron-sample-${{matrix.target}}-${{steps.gitversion.outputs.semVer}}
         path: "bin/[Dd]esktop/\n!bin/[Dd]esktop/*unpacked/\n!bin/[Dd]esktop/*.blockmap\n!bin/[Dd]esktop/*.yml"
