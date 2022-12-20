@@ -1,4 +1,4 @@
-#addin "nuget:?package=Cake.Electron.Net&version=1.1.0"
+#addin "nuget:?package=Cake.Electron.Net&version=1.1.0.7"
 using Cake.Electron.Net;
 using Cake.Electron.Net.Commands.Settings;
 
